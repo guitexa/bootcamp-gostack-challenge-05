@@ -10,10 +10,12 @@ interface CreateTransaction {
 class CreateTransactionService {
   private transactionsRepository: TransactionsRepository;
 
+  // Use the database instantiated
   constructor(transactionsRepository: TransactionsRepository) {
     this.transactionsRepository = transactionsRepository;
   }
 
+  // Create a new transaction
   public execute({ title, value, type }: CreateTransaction): Transaction {
     const findEnoughBalance = this.transactionsRepository.getBalance().total;
 

@@ -7,6 +7,7 @@ const transactionRouter = Router();
 
 const transactionsRepository = new TransactionsRepository();
 
+// List all transactions and balance with incomes and outcomes
 transactionRouter.get('/', (request, response) => {
   try {
     const transactions = {
@@ -20,6 +21,7 @@ transactionRouter.get('/', (request, response) => {
   }
 });
 
+// Create a new transactions with income or outcome
 transactionRouter.post('/', (request, response) => {
   try {
     const { title, value, type } = request.body;

@@ -9,6 +9,7 @@ class Transaction {
 
   type: 'income' | 'outcome';
 
+  // Model to set pattern when a transaction is created on database
   constructor({ title, value, type }: Omit<Transaction, 'id'>) {
     this.id = uuid();
     this.title = title;
